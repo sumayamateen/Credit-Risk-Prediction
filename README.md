@@ -1,173 +1,307 @@
-# 🏦 Credit Risk Prediction System
+# 🏦 Credit Risk Exploratory Data Analysis (EDA)
 
-> End-to-end machine learning system for predicting loan defaults, reducing bank losses by $97M annually
+> Comprehensive analysis of 307,511 loan applications to uncover default patterns and risk factors
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red.svg)](your-streamlit-link)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-[Live Demo](your-streamlit-link) | [Dashboard](your-powerbi-link) | [Presentation](presentation-link)
+[![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-green.svg)](https://pandas.pydata.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
 
 ---
 
 ## 📊 Project Overview
 
-Banks lose billions annually from loan defaults while rejecting creditworthy customers. This project builds a machine learning system to:
-- Predict which customers will default **before** loan approval
-- Reduce default rate from 8% to 5%
-- Identify good customers being incorrectly rejected
-- Provide real-time risk scoring
+This project performs in-depth exploratory data analysis on the **Home Credit Default Risk** dataset to understand:
+- What factors contribute to loan defaults?
+- Which customer segments have higher risk?
+- How do demographic and financial variables relate to repayment behavior?
 
-**Business Impact:** $97M annual savings through improved approval decisions
-
----
-
-## 🎯 Business Problem
-
-**Problem 1: High Default Rate (8%)**
-- 5,651 annual defaults costing $59.3M
-
-**Problem 2: Conservative Approvals**
-- 22,982 creditworthy customers rejected yearly
-- $124.1M in lost interest revenue
-
-**Solution:** ML-based credit scoring system
+**Business Context:** Banks lose billions annually from loan defaults. Understanding default patterns is the first step toward building predictive models that reduce risk.
 
 ---
 
-## 📈 Results
+## 🎯 Key Findings
 
-| Metric | Baseline | Our Model | Improvement |
-|--------|----------|-----------|-------------|
-| Default Rate | 8.07% | 5.0% | ⬇️ 38% |
-| ROC-AUC Score | - | 78% | - |
-| Precision | - | 72% | - |
-| Recall | - | 68% | - |
-| Annual Savings | $0 | $97M | ⬆️ $97M |
+### Default Rate
+- **Overall Default Rate:** 8.07% (24,825 defaults out of 307,511 applications)
+- This means approximately 1 in 12 customers fail to repay their loans
 
----
+### Critical Risk Factors Discovered
 
-## 🛠️ Tech Stack
-
-**Data Processing:** Python, Pandas, NumPy  
-**Machine Learning:** Scikit-learn, XGBoost, LightGBM  
-**Visualization:** Matplotlib, Seaborn, Plotly  
-**Dashboard:** Power BI  
-**Deployment:** Streamlit Cloud  
-**Database:** SQLite
+| Factor | Key Insight | Business Impact |
+|--------|-------------|-----------------|
+| **Income Level** | Lower income customers show higher default rates | Adjust loan amounts based on income brackets |
+| **Age** | Younger applicants have higher risk | Consider age-based approval criteria |
+| **Family Size** | Number of children correlates with default risk | Factor family obligations into decisions |
+| **Employment** | Employment duration affects repayment ability | Require minimum employment tenure |
+| **External Credit Score** | Strong negative correlation with default | Prioritize external credit data in decisions |
+| **Housing Type** | Housing stability impacts default rates | Consider housing type in risk assessment |
+| **Car Ownership** | Car owners show different risk profiles | Use as supporting risk indicator |
 
 ---
 
-## 📂 Dataset
+## 📂 Dataset Information
 
 **Source:** [Home Credit Default Risk (Kaggle)](https://www.kaggle.com/c/home-credit-default-risk/data)
 
-**Size:** 307,511 loan applications  
-**Features:** 122 variables  
-**Target:** Binary (0 = Repaid, 1 = Defaulted)
+**Size:**
+- **Rows:** 307,511 loan applications
+- **Columns:** 122 features
+- **Target Variable:** Binary (0 = Repaid, 1 = Default)
+
+**Feature Categories:**
+- Demographics (age, gender, family status)
+- Financial (income, credit amount, annuity)
+- Employment (occupation, years employed)
+- Assets (car ownership, property ownership)
+- Credit Bureau (external scores, credit inquiries)
+- Application (contract type, weekday, hour)
+- Documents (21 document submission flags)
 
 ---
 
-## 🚀 Quick Start
+## 🔍 Analysis Performed
+
+### 1. **Data Understanding**
+- Dataset shape and structure
+- Data types and column overview
+- Statistical summary of numerical features
+- Missing value analysis
+
+### 2. **Default Rate Analysis**
+- Overall default rate calculation
+- Default distribution visualization
+
+### 3. **Demographic Analysis**
+✅ **Children vs Default**
+- How number of children affects default probability
+- Family size impact on repayment behavior
+
+✅ **Single Parents Analysis**
+- Default rates among single parents
+- Financial stress indicators
+
+✅ **Age vs Default**
+- Age group segmentation
+- Risk profiles by age bracket
+
+✅ **Family Members vs Default**
+- Household size correlation with default
+- Living situation impact
+
+✅ **Gender vs Default**
+- Male vs female default rates
+- Gender-based risk differences
+
+### 4. **Financial Analysis**
+✅ **Income vs Default**
+- Income brackets and default correlation
+- Income-to-loan ratio analysis
+
+✅ **External Credit Scores**
+- External source 1, 2, 3 correlation with default
+- Credit score predictive power
+
+### 5. **Employment Analysis**
+✅ **Employment vs Default**
+- Employment duration and stability
+- Occupation type risk profiles
+
+### 6. **Asset Analysis**
+✅ **Housing Type vs Default**
+- House ownership vs renting patterns
+- Housing stability indicator
+
+✅ **Car Ownership vs Default**
+- Car owners vs non-owners default rates
+- Asset ownership as risk signal
+
+### 7. **Data Quality Assessment**
+- Missing value patterns
+- Data integrity checks
+- Outlier identification
+
+---
+
+## 📈 Visualizations
+
+The notebook includes multiple visualizations:
+- Distribution plots for key variables
+- Bar charts comparing default rates across categories
+- Correlation heatmaps
+- Box plots for outlier detection
+- Count plots for categorical variables
+
+---
+
+## 🛠️ Technologies Used
+
+**Languages & Libraries:**
+- **Python 3.8+**
+- **Pandas** - Data manipulation and analysis
+- **NumPy** - Numerical computing
+- **Matplotlib** - Data visualization
+- **Seaborn** - Statistical data visualization
+
+**Environment:**
+- **Jupyter Notebook** - Interactive analysis
+
+---
+
+## 🚀 How to Run This Analysis
+
+### Prerequisites
+```bash
+# Ensure you have Python 3.8 or higher installed
+python --version
+```
 
 ### Installation
 
+1. **Clone the repository**
 ```bash
-# Clone repository
 git clone https://github.com/sumayamateen/credit-risk-prediction.git
 cd credit-risk-prediction
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
 ```
 
-### Run Streamlit App
-
+2. **Install required packages**
 ```bash
-cd app
-streamlit run streamlit_app.py
+pip install pandas numpy matplotlib seaborn jupyter
 ```
 
-### Run Jupyter Notebooks
+3. **Download the dataset**
+- Download `application_train.csv` from [Kaggle](https://www.kaggle.com/c/home-credit-default-risk/data)
+- Place it in the project directory
 
+4. **Run the notebook**
 ```bash
-jupyter notebook notebooks/01_EDA.ipynb
+jupyter notebook 01_EDA_Data_Exploration.ipynb
 ```
 
 ---
 
-## 📊 Project Workflow
+## 📊 Sample Insights
 
-1. **Data Understanding** → Analyze 307K applications, 122 features
-2. **Data Cleaning** → Handle missing values (30-70% in some columns)
-3. **EDA** → Discover default patterns, feature correlations
-4. **Feature Engineering** → Create income ratios, credit utilization, etc.
-5. **Model Training** → Compare Logistic Regression, Random Forest, XGBoost
-6. **Evaluation** → ROC-AUC, Precision-Recall, Confusion Matrix
-7. **Deployment** → Streamlit app + Power BI dashboard
-8. **Business Case** → ROI analysis, cost-benefit calculation
+### Example Finding: Income vs Default
 
----
+```python
+# Code snippet from analysis
+default_rate = df["TARGET"].sum() / len(df) * 100
+print(f"Default rate: {default_rate:.2f}%")
+# Output: Default rate: 8.07%
+```
 
-## 🔍 Key Insights
+### Statistical Summary
 
-**Top 5 Default Predictors:**
-1. Loan-to-Income Ratio (0.42 correlation)
-2. External Credit Score (0.38 correlation)
-3. Employment Duration (-0.31 correlation)
-4. Age (-0.28 correlation)
-5. Number of Credit Bureau Inquiries (0.24 correlation)
-
-**Customer Segments:**
-- Low Risk (45%): Auto-approve
-- Medium Risk (35%): Manual review
-- High Risk (20%): Reject or require collateral
+The analysis reveals:
+- Average loan amount: 599,026 currency units
+- Average income: 168,798 currency units
+- Loan-to-income ratio varies significantly across defaulters vs non-defaulters
 
 ---
 
-## 📱 Streamlit App Features
+## 💡 Business Recommendations
 
-- Real-time risk scoring (<1 second)
-- Customer information input form
-- Credit score (300-850 scale)
-- Top 5 risk factors explanation
-- Approval recommendation
-- SHAP value visualization
+Based on the EDA findings:
 
----
+1. **Risk Segmentation**
+   - Create low/medium/high risk categories based on discovered patterns
+   - Adjust approval thresholds for each segment
 
-## 📊 Power BI Dashboard
+2. **Feature Importance**
+   - Prioritize external credit scores in decision-making
+   - Consider income-to-loan ratio as primary metric
+   - Factor in employment stability
 
-**6 Interactive Pages:**
-1. Executive Summary (KPIs, trends)
-2. Risk Segmentation (portfolio breakdown)
-3. Model Performance (metrics, confusion matrix)
-4. Feature Analysis (importance, correlations)
-5. Geographic Analysis (country-wise risk)
-6. What-If Analysis (threshold adjustments)
+3. **Data Quality**
+   - Address missing values in critical fields (external scores, occupation)
+   - Implement better data collection for high-impact features
 
----
-
-## 💼 Business Impact
-
-**Before ML Model:**
-- Default rate: 8.07%
-- Annual loss: $59.3M
-- Lost revenue: $124.1M
-
-**After ML Model:**
-- Default rate: 5.0%
-- Annual loss: $36.7M
-- Lost revenue: $49.6M
-
-**Net Benefit: $97M annually**
+4. **Next Steps**
+   - Build predictive models using identified risk factors
+   - Develop automated risk scoring system
+   - Create monitoring dashboard for portfolio health
 
 ---
 
-## 📈 Model Performance
+## 📁 Project Structure
 
-**Confusion Matrix (Test Set):**
+```
+credit-risk-prediction/
+│
+├── 01_EDA_Data_Exploration.ipynb    # Main analysis notebook
+├── README.md                         # This file
+├── requirements.txt                  # Python dependencies
+│
+└── data/
+    └── application_train.csv         # Dataset (not included - download from Kaggle)
+```
+
+---
+
+## 🔮 Future Work
+
+- [ ] Deep dive into missing value patterns
+- [ ] Feature engineering for predictive modeling
+- [ ] Advanced visualizations (interactive dashboards)
+- [ ] Correlation analysis with external data sources
+- [ ] Build machine learning models based on insights
+- [ ] Create Power BI dashboard for stakeholders
+
+---
+
+## 📚 Key Takeaways
+
+### For Data Scientists:
+- Demonstrates systematic EDA approach
+- Shows how to handle large datasets (300K+ rows)
+- Exhibits feature analysis techniques
+- Prepares groundwork for predictive modeling
+
+### For Business Stakeholders:
+- Identifies 8.07% default rate as key metric
+- Highlights critical risk factors for decision-making
+- Provides actionable insights for risk management
+- Quantifies patterns in customer behavior
+
+---
+
+## 👤 Author
+
+**Sumaya Mateen**  
+Data Analyst | Python, SQL, Power BI
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/sumaya-mateen)
+[![Email](https://img.shields.io/badge/Email-Contact-red)](mailto:sumayamateen6@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-View-green)](https://github.com/sumayamateen/Analytics-Portfolio)
+
+---
+
+## 🙏 Acknowledgments
+
+- **Dataset:** [Home Credit Group](https://www.kaggle.com/c/home-credit-default-risk) via Kaggle
+- **Inspiration:** Kaggle community notebooks and discussions
+- **Tools:** Python data science ecosystem
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 📝 Notes
+
+**Currency:** The dataset does not specify currency. Values are likely in Czech Koruna (CZK) or normalized units from Home Credit Group's international operations.
+
+**Data Privacy:** All data is anonymized. No personally identifiable information (PII) is included.
+
+**Reproducibility:** Results are reproducible by running the notebook with the same dataset version.
+
+---
+
+⭐ **If you found this analysis useful, please star this repository!**
+
+---
+
+*Last Updated: May 2026*
