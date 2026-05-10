@@ -29,13 +29,14 @@ This project performs in-depth exploratory data analysis on the **Home Credit De
 
 | Factor | Key Insight | Business Impact |
 |--------|-------------|-----------------|
-| **Income Level** | Lower income customers show higher default rates | Adjust loan amounts based on income brackets |
-| **Age** | Younger applicants have higher risk | Consider age-based approval criteria |
-| **Family Size** | Number of children correlates with default risk | Factor family obligations into decisions |
-| **Employment** | Employment duration affects repayment ability | Require minimum employment tenure |
-| **External Credit Score** | Strong negative correlation with default | Prioritize external credit data in decisions |
-| **Housing Type** | Housing stability impacts default rates | Consider housing type in risk assessment |
-| **Car Ownership** | Car owners show different risk profiles | Use as supporting risk indicator |
+| **Age** | Younger applicants have significantly higher risk (18-25: 12.30% vs 65-75: 3.73%) | Implement age-based approval criteria |
+| **External Credit Score** | Weak negative correlation with default (-0.16 to -0.18); best predictor among available features | Use as supporting factor, not sole decision driver |
+| **Employment Duration** | Longer employment = lower default risk (<1 year: 10.97% vs 10+ years: 5.19%) | Require minimum employment tenure |
+| **Income Level** | Mixed pattern; medium income (100k-200k) shows highest default (8.55%) | Use with other factors, not alone |
+| **Gender** | Males have higher default rate (10.14% vs females 7.00%) | Consider gender in risk models |
+| **Car Ownership** | Car owners default less (7.24% vs 8.50%) | Use as supporting risk indicator |
+| **Homeownership** | Homeowners have slightly lower default (7.96% vs renters 8.32%) | Consider housing stability |
+| **Children** | 4 children shows highest risk (12.82%), but sample size small | Use with caution |
 
 ---
 
